@@ -21,7 +21,7 @@ public class JDBCDEMO {
         Statement statement = con.createStatement();
 
         // Create a PreparedStatement for parameterized queries
-        PreparedStatement preparedStatement = con.prepareStatement(  "INSERT INTO student (id, name, age) VALUES (?, ?, ?)");
+        PreparedStatement preparedStatement =con.prepareStatement(  "INSERT INTO student (id, name, age) VALUES (?, ?, ?)");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -76,6 +76,8 @@ public class JDBCDEMO {
                         
                     System.out.print("Enter student age: ");
                     int age = scanner.nextInt();
+
+                    preparedStatement = con.prepareStatement(  "INSERT INTO student (id, name, age) VALUES (?, ?, ?)");
 
                     preparedStatement.setInt(1, id);
                     preparedStatement.setString(2, name);
@@ -135,8 +137,8 @@ public class JDBCDEMO {
                     preparedStatement = con.prepareStatement("UPDATE student SET age = ? WHERE id = ?");
 
                                        
-                    preparedStatement.setInt(1, updateId);
-                    preparedStatement.setInt(2, newStudentAge);
+                    preparedStatement.setInt(1,newStudentAge );
+                    preparedStatement.setInt(2, updateId);
 
                     preparedStatement.executeUpdate();
 
@@ -149,7 +151,7 @@ public class JDBCDEMO {
                     System.out.print("Enter student ID to delete: ");
                     int deleteId = scanner.nextInt();
                     
-                    String query = "DELETE FROM student WHERE id=" + deleteId;
+                    String query = "DELETE FROM student WHERE id = " + deleteId;
                     statement.executeUpdate(query);
                     
                     System.out.println("Record deleted successfully using Statement.");
@@ -158,6 +160,19 @@ public class JDBCDEMO {
                      break;
                 
                 case 7:{
+
+                    System.out.print("Enter student ID to delete: ");
+                    int deleteId = scanner.nextInt();
+                    
+            
+                    preparedStatement = con.prepareStatement( "DELETE FROM student WHERE id= ?");
+                    preparedStatement.setInt(1, deleteId);
+
+                     preparedStatement.executeUpdate();
+
+
+                    
+                    System.out.println("Record deleted successfully using preparedStatement.");
 
 
                 }
