@@ -66,6 +66,7 @@ public class AdminController {
 
     /**
      * 
+     * @author Aakanksha 
      * Updates the description of an existing service using the updated description provided in the request body.
      *      
      */
@@ -79,6 +80,7 @@ public class AdminController {
 
     /**
      * 
+     * @author Aakanksha 
      * Updates the price of an existing service using the updated price provided in the request body.
      */
     @PutMapping(value="update-price")
@@ -91,6 +93,7 @@ public class AdminController {
 
     /**
      * 
+     * @author Aakanksha 
      *  Updates the category of an existing service using the updated category provided in the request body.
      */
     @PutMapping(value="update-category")
@@ -100,6 +103,11 @@ public class AdminController {
 		 
 	}
 
+    /**
+     *
+     * @author Aakanksha 
+     * Updates the duration of an existing service using the updated duration provided in the request body.
+     */
     @PutMapping(value="update-duration")
     public ResponseEntity<Map<String,String> >updateDuration(@RequestBody Map<String, String> entity) {
 		 
@@ -108,6 +116,11 @@ public class AdminController {
 	}
 
 
+    /**
+     * 
+     * @author Aakanksha 
+     * Retrieves a list of all services.
+     */
     @GetMapping(value="get-all")
     public ResponseEntity<List<ServiceInformation >> getAll() {
 		 
@@ -115,6 +128,11 @@ public class AdminController {
 		 
 	}
 
+    /**
+     * 
+     * @author Aakanksha 
+     *  Retrieves a list of services matching a specific service name provided in the request body.
+     */
     @GetMapping(value="get-by-serviceName")
     public ResponseEntity<List<ServiceInformation >> getByServiceName(@RequestBody Map<String, String> entity) {
 		 
@@ -122,6 +140,11 @@ public class AdminController {
 		 
 	}
 
+    /**
+     * 
+     * @author Aakanksha 
+     * Retrieves a list of services whose names start with a specific prefix provided in the request body.
+     */
     @GetMapping(value="get-all-startwith-serviceName")
     public ResponseEntity<List<ServiceInformation >> getAllStartwithServiceName(@RequestBody Map<String, String> entity) {
 		 
@@ -130,6 +153,11 @@ public class AdminController {
 	}
     
 
+    /**
+     * 
+     * @author Aakanksha 
+     * Retrieves a list of services based on a specific price provided.
+     */
     @GetMapping(value="get-by-price")
     public ResponseEntity<List<ServiceInformation >> getByPrice(@RequestBody Map<String, String> entity) {
 		 
@@ -137,6 +165,11 @@ public class AdminController {
 		 
 	}
 
+    /**
+     * 
+     * @author Aakanksha 
+     *Retrieves a list of services with prices less than the value provided.
+     */
     @GetMapping(value="get-by-lessthan-price")
     public ResponseEntity<List<ServiceInformation >> getByLessthanPrice(@RequestBody Map<String, String> entity) {
 		 
@@ -144,6 +177,11 @@ public class AdminController {
 		 
 	}
 
+    /**
+     * 
+     * @author Aakanksha 
+     *  Retrieves a list of services with prices greater than the value provided.
+     */
      @GetMapping(value="get-by-greaterthan-price")
     public ResponseEntity<List<ServiceInformation >> getByGreaterthanPrice(@RequestBody Map<String, String> entity) {
 		 
@@ -152,6 +190,11 @@ public class AdminController {
 	}
 
 
+    /**
+     * 
+     * @author Aakanksha 
+     *Retrieves a list of services with prices falling within a specified range provided.
+     */
     @GetMapping(value="get-by-between-price")
     public ResponseEntity<List<ServiceInformation >> getByBetweenPrice(@RequestBody Map<String, String> entity) {
 		 
@@ -159,6 +202,11 @@ public class AdminController {
 		 
 	}
 
+    /**
+     * 
+     * @author Aakanksha 
+     * Retrieves a list of services matching a specific category provided.
+     */
     @GetMapping(value="get-by-category")
     public ResponseEntity<List<ServiceInformation >> getByCategory(@RequestBody Map<String, String> entity) {
 		 
@@ -167,6 +215,11 @@ public class AdminController {
 	}
 
 
+    /**
+     * 
+     * @author Aakanksha 
+     * Retrieves a list of services whose categories start with a specific prefix provided.
+     */
      @GetMapping(value="get-all-startwith-category")
     public ResponseEntity<List<ServiceInformation >> getAllStartwihCategory(@RequestBody Map<String, String> entity) {
 		 
@@ -174,6 +227,11 @@ public class AdminController {
 		 
 	}
 
+    /**
+     * 
+     * @author Aakanksha 
+     * Retrieves a list of services based on a specific duration provided.
+     */
     @GetMapping(value="get-by-duration")
     public ResponseEntity<List<ServiceInformation >> getByDuration(@RequestBody Map<String, String> entity) {
 		 
@@ -182,6 +240,11 @@ public class AdminController {
 	}
 
 
+    /**
+     * 
+     * @author Aakanksha 
+     * Retrieves a list of services with durations less than the value provided. 
+     */
     @GetMapping(value="get-by-lessthan-duration")
     public ResponseEntity<List<ServiceInformation >> getByLessthanDuration(@RequestBody Map<String, String> entity) {
 		 
@@ -189,6 +252,11 @@ public class AdminController {
 		 
 	}
 
+    /**
+     * 
+     * @author Aakanksha 
+     * Retrieves a list of services with durations greater than the value provided.
+     */
      @GetMapping(value="get-by-greaterthan-duration")
     public ResponseEntity<List<ServiceInformation >> getByGreaterthanDuration(@RequestBody Map<String, String> entity) {
 		 
@@ -196,7 +264,11 @@ public class AdminController {
 		 
 	}
 
-
+    /**
+     * 
+     * @author Aakanksha 
+     * Deletes a service based on information provided.
+     */
     @DeleteMapping(value="delete-service")
     public ResponseEntity<Map<String,String> >deleteService(@RequestBody Map<String, String> entity) {
 		 
@@ -204,6 +276,11 @@ public class AdminController {
 		 
 	}
 
+    /**
+     * 
+     * @author Aakanksha 
+     *  Deletes services based on a specific service name provided.
+     */
     @DeleteMapping(value="delete-service-by-serviceName")
     public ResponseEntity<Map<String,String> >deleteServiceByServiceName(@RequestBody Map<String, String> entity) {
 		 
@@ -211,6 +288,11 @@ public class AdminController {
 		 
 	}
 
+    /**
+     * 
+     * @author Aakanksha 
+     * Deletes services based on a specific category provided.
+     */
     @DeleteMapping(value="delete-service-by-category")
     public ResponseEntity<Map<String,String> >deleteServiceByCategory(@RequestBody Map<String, String> entity) {
 		 
@@ -219,6 +301,11 @@ public class AdminController {
 	}
 
 
+    /**
+     * 
+     * @author Aakanksha 
+     * Deletes services based on a specific price provided.
+     */
     @DeleteMapping(value="delete-service-by-price")
     public ResponseEntity<Map<String,String> >deleteServiceByPrice(@RequestBody Map<String, String> entity) {
 		 
@@ -227,6 +314,11 @@ public class AdminController {
 	}
 
 
+    /**
+     * 
+     * @author Aakanksha 
+     * Deletes services based on a specific duration provided.
+     */
     @DeleteMapping(value="delete-service-by-duration")
     public ResponseEntity<Map<String,String> >deleteServiceByDuration(@RequestBody Map<String, String> entity) {
 		 
@@ -235,12 +327,22 @@ public class AdminController {
 	}
 
 
+    /**
+     * 
+     * @author Aakanksha 
+     *Deletes services based on a specific description provided.
+     */
      @DeleteMapping(value="delete-service-by-description")
     public ResponseEntity<Map<String,String> >deleteServiceByDescription(@RequestBody Map<String, String> entity) {
 		 
 		 return adminService.deleteServiceByDescription(entity);
 		 
 	}
+
+
+    /**
+     * 15 sept
+     */
 
 
 
